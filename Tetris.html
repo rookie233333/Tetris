@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>俄罗斯方块</title>
+</head>
+<style>
+	body{
+		text-align: center;
+		background-color:#555555;
+		/*background:url(img/road.jpg) no-repeat center;*/
+	}
+	h2{
+		color: #FFF;
+		font-weight: normal;
+		letter-spacing: 8px;
+		padding-left: 14px;
+		
+	}
+	#canvas{
+		position: relative;
+		border: 2px solid #FFF;
+	}
+	#bg{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		top: 0;
+	}
+	#bgPicture{
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+	}
+	#center{
+		width: 490px;
+		height: 700px;
+		position: absolute;
+		top: 6px;
+		left: 50%;
+		margin-left: -245px;
+		/*border: 1px solid red;*/
+	}
+	#img_p{
+		width: 130px;
+		height: 60px;
+		position: absolute;
+		top: 5px;
+		right: 2px;
+		border: 2px solid #98DC55;
+		border-radius: 20px;
+		background-color: rgba(0,0,0,0.2);
+	}
+	#img_p img:hover{
+		cursor: pointer;
+	}
+	.img_refresh{
+		position: absolute;
+		top: 5px;
+		left: 10px;
+	}
+	.img_pause{
+		position: absolute;
+		top: 5px;
+		right:6px;
+	}
+	.img_play{
+		display: none;
+		position: absolute;
+		top: 5px;
+		right: 6px;
+	}
+	.score,.grade,.line{
+		width: 130px;
+		height: 125px;
+		border: 2px solid #98DC55;
+		border-radius: 20px;
+		position: absolute;
+		right: 2px;
+		background-color: rgba(0,0,0,0.2);
+	}
+	
+	.score{
+		top: 225px;
+	}
+	.grade{
+		top: 365px;
+	}
+	.line{
+		top: 505px;
+	}
+	.control{
+		width: 130px;
+		height: 60px;
+		border: 2px solid #98DC55;
+		border-radius: 20px;
+		position: absolute;
+		background-color: rgba(0,0,0,0.2);
+		right: 2px;
+		top: 638px;
+	}
+	.control img:hover{
+		cursor: pointer;
+	}
+	.img_last{
+		position: absolute;
+		top: 5px;
+		left: 10px;
+	}
+	.img_next{
+		position: absolute;
+		top: 5px;
+		left: 71px;
+	}
+</style>
+<!--导入工具函数 -->
+<script type="text/javascript" src="js/common.js"></script>
+<!-- 导入角色 -->
+<script type="text/javascript" src="js/roles.js"></script>
+<!-- 导入游戏引擎 -->
+<script type="text/javascript" src="js/engine.js"></script>
+<!-- 游戏主程序 -->
+<script type="text/javascript" src="js/main.js"></script>
+<body>
+	<canvas id="canvas">
+		浏览器不支持画布
+	</canvas>
+	<div id="bg">
+		<img id="bgPicture" src="img/bg0.jpg" height="100%" width="100%"/>
+	</div>
+	<div id="center">
+		<div id="img_p">
+			<img class="img_refresh" src="img/refresh.png" />
+			<img class="img_pause" src="img/pause.png"/>
+			<img class="img_play" src="img/play.png"/>
+		</div>
+		<div class="score">
+			<h2>得分</h2>
+			<h2 id="myScore">0</h2>
+		</div>
+		<div class="grade">
+			<h2>等级</h2>
+			<h2 id="myGrade">1</h2>
+		</div>
+		<div class="line">
+			<h2>行高</h2>
+			<h2 id="myLine">0</h2>
+		</div>
+		<div class="control">
+			<img class="img_last" src="img/last.png"/>
+			<img class="img_next" src="img/next.png"/>
+		</div>
+	</div>
+</body>
+
+</html>
